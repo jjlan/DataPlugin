@@ -11,10 +11,9 @@ import org.gradle.api.Project
 public class DelLogPlugin implements Plugin<Project> {
   @Override
   public void apply(Project project) {
-      project.afterEvaluate {
           AppExtension android=project.getExtensions().getByType(AppExtension.class);
+          android.registerTransform(new MyTransformer(project));
+          project.logger.error("plugin->ljj:"+project.projectDir);
 
-          project.logger.error("plugin:"+project.projectDir);
-      }
   }
 }
