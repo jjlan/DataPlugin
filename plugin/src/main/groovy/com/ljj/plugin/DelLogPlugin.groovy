@@ -14,6 +14,5 @@ public class DelLogPlugin implements Plugin<Project> {
           AppExtension android=project.getExtensions().getByType(AppExtension.class);
           android.registerTransform(new MyTransformer(project));
           project.logger.error("plugin->ljj:"+project.projectDir);
-
   }
 }
